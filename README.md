@@ -18,6 +18,7 @@ python chunking.py
 | Day | Topic | Takeaway |
 | --- | --- | --- |
 | 01 | [Chunking strategies for RAG](days/day-01-chunking) | Fixed-size chunks cut sentences; sentence packing kept every sentence whole at a similar chunk size |
+| 02 | [BM25 retrieval from scratch](days/day-02-bm25) | On 5 questions, sentence-packed chunks put the whole fact in BM25's top result 5/5 times vs 2/5 for fixed-size chunks (4/5 with overlap) |
 
 ## Roadmap
 
