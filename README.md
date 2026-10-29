@@ -8,7 +8,7 @@ By [Muhammad Hussnain Jamil](https://www.linkedin.com/in/hussnain-jamil) · [Por
 
 ```
 cd days/day-01-chunking
-pip install pytest
+pip install pytest numpy
 python -m pytest -q
 python chunking.py
 ```
@@ -19,6 +19,7 @@ python chunking.py
 | --- | --- | --- |
 | 01 | [Chunking strategies for RAG](days/day-01-chunking) | Fixed-size chunks cut sentences; sentence packing kept every sentence whole at a similar chunk size |
 | 02 | [BM25 retrieval from scratch](days/day-02-bm25) | On 5 questions, sentence-packed chunks put the whole fact in BM25's top result 5/5 times vs 2/5 for fixed-size chunks (4/5 with overlap) |
+| 03 | [Cosine search with NumPy](days/day-03-cosine) | TF-IDF cosine had the same hit counts as BM25 (5/5 with sentence chunks); on 3 paraphrased questions both scored 0/3, so paraphrases need learned embeddings |
 
 ## Roadmap
 
