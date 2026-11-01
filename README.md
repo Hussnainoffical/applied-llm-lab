@@ -22,6 +22,7 @@ python chunking.py
 | 03 | [Cosine search with NumPy](days/day-03-cosine) | TF-IDF cosine had the same hit counts as BM25 (5/5 with sentence chunks); on 3 paraphrased questions both scored 0/3, so paraphrases need learned embeddings |
 | 04 | [Hit rate and MRR](days/day-04-hit-rate-mrr) | 12 questions asked two ways: on paraphrases, 30-char overlap raised hit@3 (0.58 to 0.67) but lowered hit@1 (0.50 to 0.42), and MRR barely moved (0.53 to 0.54); sentence packing scored 1.00 on original and 0.83 on paraphrased questions |
 | 05 | [Hybrid search with RRF](days/day-05-hybrid-rrf) | Fusing BM25 with a character n-gram retriever via RRF lifted paraphrase hit@3 from 0.83 to 1.00 and MRR from 0.83 to 0.90 on sentence chunks; on fixed-size chunks it only matched BM25 |
+| 06 | [nDCG@5 with graded relevance](days/day-06-ndcg-graded) | Standard nDCG@5 gave BM25 on fixed-size chunks a perfect 1.00 although 4 of 12 facts never sat whole in a chunk (hit@3 0.67); with a fixed ideal it scored 0.78, so comparing chunkings needs an ideal that does not depend on the chunking |
 
 ## Roadmap
 
