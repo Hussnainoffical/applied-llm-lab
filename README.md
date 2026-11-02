@@ -23,6 +23,7 @@ python chunking.py
 | 04 | [Hit rate and MRR](days/day-04-hit-rate-mrr) | 12 questions asked two ways: on paraphrases, 30-char overlap raised hit@3 (0.58 to 0.67) but lowered hit@1 (0.50 to 0.42), and MRR barely moved (0.53 to 0.54); sentence packing scored 1.00 on original and 0.83 on paraphrased questions |
 | 05 | [Hybrid search with RRF](days/day-05-hybrid-rrf) | Fusing BM25 with a character n-gram retriever via RRF lifted paraphrase hit@3 from 0.83 to 1.00 and MRR from 0.83 to 0.90 on sentence chunks; on fixed-size chunks it only matched BM25 |
 | 06 | [nDCG@5 with graded relevance](days/day-06-ndcg-graded) | Standard nDCG@5 gave BM25 on fixed-size chunks a perfect 1.00 although 4 of 12 facts never sat whole in a chunk (hit@3 0.67); with a fixed ideal it scored 0.78, so comparing chunkings needs an ideal that does not depend on the chunking |
+| 07 | [Recall@k curves before a reranker](days/day-07-recall-depth) | No pool depth fixes two limits: fixed-size chunks cap recall at 0.67 (4 of 12 facts never whole), and BM25 gives 2 of 12 paraphrased answers a zero score so it stays at 0.83 at any depth; RRF with a character n-gram retriever reaches 1.00 by k=3 on sentence chunks |
 
 ## Roadmap
 
