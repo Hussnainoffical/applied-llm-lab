@@ -26,6 +26,7 @@ python chunking.py
 | 07 | [Recall@k curves before a reranker](days/day-07-recall-depth) | No pool depth fixes two limits: fixed-size chunks cap recall at 0.67 (4 of 12 facts never whole), and BM25 gives 2 of 12 paraphrased answers a zero score so it stays at 0.83 at any depth; RRF with a character n-gram retriever reaches 1.00 by k=3 on sentence chunks |
 | 08 | [Validating LLM JSON output](days/day-08-json-validation) | On 12 hand-written failure cases, strict json.loads parsed 6 but 4 of those were schema-invalid; tolerant extraction parsed 9 (fences, prose, trailing commas) without repairing truncation, and parse + schema check matched the expected verdict 12/12 |
 | 09 | [Learned embeddings vs sparse retrievers](days/day-09-dense-vs-sparse) | bge-small alone matched character n-grams on paraphrases (hit@3 1.00, MRR 0.89 on sentence chunks) and lost one exact-wording question at rank 1; fused with BM25 via RRF it lifted paraphrase hit@1 from 0.83 to 0.92, and BM25 + char + dense gave the best MRR (1.00 original, 0.96 paraphrased) |
+| 10 | [Cross-encoder reranking](days/day-10-cross-encoder-rerank) | A MiniLM cross-encoder on the fused top 3 moved the last paraphrased answer to rank 1 (hit@1 0.92 to 1.00) for about 30 ms per query on CPU; its negative logits first broke the harness's score > 0 hit rule (hit@1 0.33) until mapped through a sigmoid |
 
 ## Roadmap
 
