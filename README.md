@@ -29,6 +29,7 @@ python chunking.py
 | 10 | [Cross-encoder reranking](days/day-10-cross-encoder-rerank) | A MiniLM cross-encoder on the fused top 3 moved the last paraphrased answer to rank 1 (hit@1 0.92 to 1.00) for about 30 ms per query on CPU; its negative logits first broke the harness's score > 0 hit rule (hit@1 0.33) until mapped through a sigmoid |
 | 11 | ["Not found": abstention thresholds](days/day-11-abstain-threshold) | With 12 unanswerable questions added, the RRF score separated answerable from unanswerable poorly (AUROC 0.68; 42% of unanswerable still answered at its strictest useful cut-off), the cross-encoder probability much better (AUROC 0.85; at p >= 0.3, 71% answered right and 17% of unanswerable answered; at 0.9 none answered but 38% of real questions refused) |
 | 12 | [Citation checks without a model](days/day-12-citation-check) | On 12 supported, 12 wrong-chunk and 9 fabricated citations, every check caught all wrong-chunk citations; content-word recall >= 0.75 let all 9 fabrications through, and "all content words inside one sentence" caught 8 of 9 while refusing 1 of 12 honest claims; a same-words role swap needs an entailment model or LLM judge |
+| 13 | [NLI only where the cheap checks pass](days/day-13-nli-judge) | NLI alone (deberta-v3-xsmall, ONNX) accepted 2 entity swaps the one-sentence rule rejects (p 0.91, 0.95); the rule passed the role swap the model rejects (p 0.36); rule then NLI caught 9/9 fabrications and 12/12 wrong-chunk citations with 12 model calls of 33, about 25 ms each on CPU |
 
 ## Roadmap
 
