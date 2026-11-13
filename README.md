@@ -31,6 +31,7 @@ python chunking.py
 | 12 | [Citation checks without a model](days/day-12-citation-check) | On 12 supported, 12 wrong-chunk and 9 fabricated citations, every check caught all wrong-chunk citations; content-word recall >= 0.75 let all 9 fabrications through, and "all content words inside one sentence" caught 8 of 9 while refusing 1 of 12 honest claims; a same-words role swap needs an entailment model or LLM judge |
 | 13 | [NLI only where the cheap checks pass](days/day-13-nli-judge) | NLI alone (deberta-v3-xsmall, ONNX) accepted 2 entity swaps the one-sentence rule rejects (p 0.91, 0.95); the rule passed the role swap the model rejects (p 0.36); rule then NLI caught 9/9 fabrications and 12/12 wrong-chunk citations with 12 model calls of 33, about 25 ms each on CPU |
 | 14 | [A real question set from real documents](days/day-14-real-docs) | On 16 user-style questions over six Python Language Reference sections, RRF (BM25 + char n-grams) on sentence chunks put the answer first for 0.25 and in the top 5 for 0.81 (toy corpus: hit@3 1.00); fixed 400-char chunks split 2 of 16 answers but had the best hit@1 (0.38), and two questions with no word overlap stayed out of every sparse top 10 |
+| 15 | [Dense + cross-encoder on real docs](days/day-15-real-docs-dense-rerank) | On the Day 14 real question set (77 sentence chunks), adding bge-small to RRF raised Recall@5 0.81 -> 0.88; a MiniLM cross-encoder over the fused top 5 raised hit@1 0.25 -> 0.44 (about 0.5 s/query on CPU), while a pool of 20 cost 4x more and dropped Recall@5 to 0.75 |
 
 ## Roadmap
 
