@@ -33,6 +33,7 @@ python chunking.py
 | 14 | [A real question set from real documents](days/day-14-real-docs) | On 16 user-style questions over six Python Language Reference sections, RRF (BM25 + char n-grams) on sentence chunks put the answer first for 0.25 and in the top 5 for 0.81 (toy corpus: hit@3 1.00); fixed 400-char chunks split 2 of 16 answers but had the best hit@1 (0.38), and two questions with no word overlap stayed out of every sparse top 10 |
 | 15 | [Dense + cross-encoder on real docs](days/day-15-real-docs-dense-rerank) | On the Day 14 real question set (77 sentence chunks), adding bge-small to RRF raised Recall@5 0.81 -> 0.88; a MiniLM cross-encoder over the fused top 5 raised hit@1 0.25 -> 0.44 (about 0.5 s/query on CPU), while a pool of 20 cost 4x more and dropped Recall@5 to 0.75 |
 | 16 | [Section-aware chunks with a title prefix](days/day-16-section-context) | Packing each Language Reference section on its own and starting every chunk with its title lifted lexical RRF hit@1 0.25 -> 0.44 and Recall@5 0.81 -> 0.88 on the real question set, matching the Day 15 cross-encoder's hit@1 without a model; BM25 alone lost one answer from its top 10 |
+| 17 | [Trying the GRADIEND package](days/day-17-gradiend) | Gradient-based feature learning on bert-base-cased, CPU only: a he/she GRADIEND rewrite moved "the professor said [MASK]" from 89% he to 89% she with no change in the neutral LM score, while the singular/plural one was weak and not selective; both live in embeddings plus layers 8-11 (14% top-1000 overlap). Gotchas: the min_left_context_words=10 default also applies to MLM, and best-by-correlation on tiny splits can keep step 0 |
 
 ## Roadmap
 
@@ -43,3 +44,4 @@ python chunking.py
 | 2 | Reliable LLM output | prompt templates, JSON output validation, retry and backoff, token and cost estimator, response caching |
 | 3 | Serving and automation | FastAPI RAG endpoint, streaming responses, webhook handler, n8n workflow template, scheduling jobs |
 | 4 | Voice and agents | Whisper transcription script, tool calling loop, two agents with a handoff, simple agent eval, German vocabulary trainer CLI |
+| 5 | Local LLM serving (next) | llama.cpp with GGUF quantization levels on CPU, an OpenAI-compatible local server with structured output checks, Ollama, then vLLM and SGLang throughput with batching and prefix caching (GPU) |
