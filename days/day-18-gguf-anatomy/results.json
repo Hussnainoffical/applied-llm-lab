@@ -1,0 +1,160 @@
+[
+  {
+    "file": "qwen2.5-0.5b-instruct-q4_0.gguf",
+    "size_mb": 408.9,
+    "params_m": 630.2,
+    "bits_per_weight": 5.37,
+    "share_rows_not_multiple_of_256": 0.834,
+    "share_by_type": {
+      "Q4_0": 0.784,
+      "Q8_0": 0.216,
+      "F32": 0.0
+    },
+    "types_by_role": {
+      "attn_k": {
+        "Q4_0": 24
+      },
+      "attn_output": {
+        "Q4_0": 24
+      },
+      "attn_q": {
+        "Q4_0": 24
+      },
+      "attn_v": {
+        "Q4_0": 24
+      },
+      "ffn_down": {
+        "Q4_0": 24
+      },
+      "ffn_gate": {
+        "Q4_0": 24
+      },
+      "ffn_up": {
+        "Q4_0": 24
+      },
+      "output": {
+        "Q8_0": 1
+      },
+      "token_embd": {
+        "Q4_0": 1
+      }
+    },
+    "layers_with_other_type": {}
+  },
+  {
+    "file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "size_mb": 468.6,
+    "params_m": 630.2,
+    "bits_per_weight": 6.16,
+    "share_rows_not_multiple_of_256": 0.834,
+    "share_by_type": {
+      "Q5_0": 0.616,
+      "Q8_0": 0.218,
+      "Q6_K": 0.083,
+      "Q4_K": 0.083,
+      "F32": 0.0
+    },
+    "types_by_role": {
+      "attn_k": {
+        "Q5_0": 24
+      },
+      "attn_output": {
+        "Q5_0": 24
+      },
+      "attn_q": {
+        "Q5_0": 24
+      },
+      "attn_v": {
+        "Q8_0": 12,
+        "Q5_0": 12
+      },
+      "ffn_down": {
+        "Q6_K": 12,
+        "Q4_K": 12
+      },
+      "ffn_gate": {
+        "Q5_0": 24
+      },
+      "ffn_up": {
+        "Q5_0": 24
+      },
+      "output": {
+        "Q8_0": 1
+      },
+      "token_embd": {
+        "Q5_0": 1
+      }
+    },
+    "layers_with_other_type": {
+      "ffn_down": [
+        2,
+        4,
+        5,
+        11,
+        12,
+        14,
+        15,
+        17,
+        18,
+        20,
+        22,
+        23
+      ],
+      "attn_v": [
+        2,
+        4,
+        5,
+        11,
+        12,
+        14,
+        15,
+        17,
+        18,
+        20,
+        22,
+        23
+      ]
+    }
+  },
+  {
+    "file": "qwen2.5-0.5b-instruct-q8_0.gguf",
+    "size_mb": 644.4,
+    "params_m": 630.2,
+    "bits_per_weight": 8.5,
+    "share_rows_not_multiple_of_256": 0.834,
+    "share_by_type": {
+      "Q8_0": 1.0,
+      "F32": 0.0
+    },
+    "types_by_role": {
+      "attn_k": {
+        "Q8_0": 24
+      },
+      "attn_output": {
+        "Q8_0": 24
+      },
+      "attn_q": {
+        "Q8_0": 24
+      },
+      "attn_v": {
+        "Q8_0": 24
+      },
+      "ffn_down": {
+        "Q8_0": 24
+      },
+      "ffn_gate": {
+        "Q8_0": 24
+      },
+      "ffn_up": {
+        "Q8_0": 24
+      },
+      "output": {
+        "Q8_0": 1
+      },
+      "token_embd": {
+        "Q8_0": 1
+      }
+    },
+    "layers_with_other_type": {}
+  }
+]
