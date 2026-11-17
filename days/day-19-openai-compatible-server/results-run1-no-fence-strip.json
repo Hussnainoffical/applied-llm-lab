@@ -1,0 +1,21 @@
+{
+  "gguf": "qwen2.5-0.5b-instruct-q8_0.gguf",
+  "plain": {
+    "valid_json": 0,
+    "exact_keys": 0,
+    "n": 12,
+    "retries": 0,
+    "mean_latency_s": 21.28,
+    "completion_tok_per_s": 1.9,
+    "example": "```json\n{\n  \"name\": \"Anna\",\n  \"city\": \"Berlin\",\n  \"date\": \"2026-12-03\"\n}\n```"
+  },
+  "json_object": {
+    "valid_json": 0,
+    "exact_keys": 0,
+    "n": 12,
+    "retries": 12,
+    "mean_latency_s": 41.34,
+    "completion_tok_per_s": 1.9,
+    "example": "```json\n{\n  \"name\": \"Anna\",\n  \"city\": \"Berlin\",\n  \"date\": \"2026-12-03\"\n}\n```"
+  }
+}
